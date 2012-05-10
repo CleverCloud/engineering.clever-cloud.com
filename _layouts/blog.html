@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="{{ page.lang }}">
+	<head>
+		<meta charset="UTF-8"/>
+		<title> {% if page.title %}
+			{{ page.title }} | {% endif %}
+			{{ site.i.title[page.lang] }} : {{ site.i.brand }}
+		</title>
+		<link rel="stylesheet" type="text/css" href="/www/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/www/css/bootstrap-responsive.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/www/css/blog.css"/>
+		<script type="text/javascript" src="/www/js/jquery.min.js"></script>
+		<script type="text/javascript" src="/www/js/bootstrap-collapse.js"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-fixed-top">
+			{% include nav.html %}
+		</nav>
+		<div id="wrap">
+			<section class="container">
+				<div class="row">
+					<div id="main" class="span9">
+						{{ content }}
+					</div> {% unless page.lang == 'none' %}
+					<aside class="span3"> {% for w in site.i.widgets.all %}
+						{% include widget.html %} {% endfor %} {% for l in site.i.links.all %}
+						{% include link.html %} {% endfor %}
+					</aside> {% endunless %}
+				</div>
+			</section>
+		</div>
+		<footer>
+			<div class="container">
+				<div id="sitemap" class="row">
+					{% include sitemap.html %}
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

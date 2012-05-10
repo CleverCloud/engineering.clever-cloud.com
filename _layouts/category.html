@@ -1,0 +1,36 @@
+---
+layout: blog
+---
+
+<article class="post">
+	<div class="page-header">
+		<h2>
+			<a href="/">{{ site.i.home }}</a> &raquo;
+			{{ page.cat }}
+		</h2>
+	</div>
+	<div class="content">
+		{{ content }}
+	</div>
+</article>
+{% for p in site.categories[page.cat] %}
+<article class="post">
+	<div class="page-header">
+		<p class="date">
+			{{ site.i.post.posted[page.lang] }}
+			{{ p.date | date: site.i.post.date[page.lang] }}
+		</p>
+		<h2>
+			<a href="{{ p.url }}">{{ p.title }}</a>
+		</h2>
+	</div>
+	<div class="content">{{ p.content | truncatewords: 90 }}</div>
+	<footer class="row">
+		<p class="span2 read-more">
+			<a href="{{ p.url }}">{{ site.i.post.more[page.lang] }} &raquo;</a>
+		</p> {% if p.level %}
+		<p class="level"> {% assign l = p.level %}
+			{% include level.html %}
+		</p> {% endif %}
+	</footer>
+</article> {% endfor %}

@@ -1,0 +1,25 @@
+---
+layout: blog
+---
+
+<article class="post">
+	<div class="page-header">
+		<p class="date">
+			{{ site.i.post.posted[page.lang] }}
+			{{ page.date | date: site.i.post.date[page.lang] }}
+		</p>
+		<h2>
+			<a href="/">{{ site.i.home }}</a> &raquo;
+			{{ page.title }}
+		</h2>
+	</div>
+	<div class="content">
+		{{ content }}
+	</div> {% if page.author %} {% assign r = page.author %}
+	<footer class="row">
+		<div class="span5 author">
+			{% include author.html %}
+		</div>
+		<div class="span3 social"> social </div>
+	</footer> {% endif %}
+</article>

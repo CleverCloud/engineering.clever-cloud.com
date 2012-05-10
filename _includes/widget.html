@@ -1,0 +1,18 @@
+
+<div id="{{ w }}"> {% if site.i.widgets[w][page.lang] %}
+	<div class="page-header">
+		<h3>{{ site.i.widgets[w][page.lang] }}</h3>
+	</div>{% endif %}
+	<ul> {% case w %} {% when 'categories' %} {% for c in site.categories %}
+		<li> {% assign cid = c[0] %}
+			<a href="/{{ cid }}/">
+				<h3>{{ site.i.categories[cid] }}</h3>
+			</a>
+		</li> {% endfor %} {% when 'tags' %} {% when 'latest' %} {% for p in site.posts limit:10 %}
+		<li>
+			<a href="{{ p.url }}">
+				{{ p.date | date: site.i.post.date[page.lang] }} : {{ p.title }}
+			</a>
+		</li> {% endfor %} {% endcase %}
+	</ul>
+</div>

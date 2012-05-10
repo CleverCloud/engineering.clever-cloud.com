@@ -1,0 +1,29 @@
+
+<div class="navbar-inner">
+	<div class="container">
+		<a class="brand" href="/">
+			{{ site.i.title[page.lang] }} : {{ site.i.brand }}
+		</a>
+		<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</a>
+		<div class="nav-collapse pull-right">
+			<ul id="nav-main" class="nav"> {% for m in site.i.nav.main.all %}
+				<li>
+					<a href="{% if m.id %}/{{ m.id }}.html{% else %}{{ m.url }}{% endif %}">
+						{{ m.label }}
+					</a>
+				</li> {% endfor %}
+			</ul>
+			<ul id="nav-social" class="nav"> {% for m in site.i.nav.social.all %}
+				<li>
+					<a href="{% if m.id %}/{{ m.id }}.html{% else %}{{ m.url }}{% endif %}">
+						{{ m.label }}
+					</a>
+				</li> {% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>
