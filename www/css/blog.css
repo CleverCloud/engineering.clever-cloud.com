@@ -221,11 +221,11 @@ body{
 			}
 			.social{
 				float:right;
-				margin-top:12px;
+				margin:12px 0 9px;
 			}
 			#post .social{
 				clear:right;
-				margin:0 0 9px;
+				margin-top:0;
 				width:88px;
 			}
 				.author h4{
@@ -420,10 +420,13 @@ body{
 	body{
 		padding-top:0;
 	}
+	.navbar{
+		margin-bottom:0;
+	}
 }
 
 @media (max-width: 768px){
-	body > footer{
+	body > #wrap{
 		margin:0 -20px;
 		padding:0 20px;
 	}
