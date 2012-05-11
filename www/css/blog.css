@@ -223,10 +223,16 @@ body{
 				float:right;
 				margin:12px 0 9px;
 			}
+			.fb_iframe_widget span{
+				top:-3px;
+			}
 			#post .social{
 				clear:right;
 				margin-top:0;
-				width:88px;
+				width:103px;
+			}
+			#post .fb_iframe_widget span{
+				margin-top:5px;
 			}
 				.author h4{
 					color:#111;
