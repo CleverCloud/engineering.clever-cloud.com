@@ -181,7 +181,7 @@ body{
 				margin-right:9px;
 			}
 			.category{
-				background:#252525;
+				background:#252525 url("../img/label-center.png") center right no-repeat;
 				border-radius:4px 0 0 4px;
 				border-right:none;
 				float:right;
