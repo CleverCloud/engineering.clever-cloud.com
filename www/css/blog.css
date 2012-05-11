@@ -31,6 +31,16 @@ body{
 		           0 0 1px #0f0f0f,
 		           inset 0 -35px 30px -40px #000;
 	}
+	.navbar .brand{
+		background:url("../img/logo.png") center;
+		display:block;
+		height:40px;
+		line-height:40px;
+		overflow:hidden;
+		padding:0;
+		text-indent:200%;
+		width:302px;
+	}
 		#nav-main a{
 			border-left:1px solid #953f4a;
 			color:#fcfcfc;
@@ -128,6 +138,12 @@ body{
 			text-align:justify;
 			text-shadow:0 1px 0 #000;
 		}
+		.highlight pre{
+			background:#111;
+		}
+			.highlight pre .lineno{
+				color:#000;
+			}
 		.post footer{
 			border:1px solid #151515;
 			border-radius:4px;
@@ -158,24 +174,31 @@ body{
 					color:#fcfcfc;
 					text-decoration:none;
 				}
+			.author+.category,.read-more+.category{
+				border:1px solid #151515;
+				border-radius:4px;
+				margin-right:9px;
+			}
 			.category{
 				background:#252525;
 				border-radius:4px 0 0 4px;
 				border-right:none;
 				float:right;
 				font-size:12px;
+				font-weight:bold;
 				margin-top:9px;
+				padding-top:3px;
 				text-transform:capitalize;
 			}
 			.level{
-				background:#78151C;
+				background:#78151C url("../img/label-bg.png") center;
 				border-right:1px dashed #252525;
 				color:#252525;
 				float:right;
 				font-size:16px;
 				margin-right:9px;
 				margin-top:10px;
-				padding:3px 4px 2px;
+				padding:3px 4px;
 				position:relative;
 				text-align:center;
 				text-shadow:0 -1px 0 #000;
@@ -315,11 +338,15 @@ body{
 		margin-bottom:20px;
 	}
 	#latest{
-		padding:10px 20px 40px;
+		padding:10px 20px;
 	}
 		#latest ul{
 			list-style:none;
 			margin-left:0;
+			text-shadow:0 1px 0 #000;
+		}
+		#latest li{
+			margin-bottom:10px;
 		}
 	.page-header h3, .sidebar-link a{
 		color:#111;

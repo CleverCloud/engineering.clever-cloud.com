@@ -25,12 +25,13 @@ layout: blog
 		</h2>
 	</div>
 	<div class="content">{{ p.content | truncatewords: 90 }}</div>
-	<footer class="row">
+	<footer class="row post-info">
 		<p class="span2 read-more">
 			<a href="{{ p.url }}">{{ site.i.post.more[page.lang] }} &raquo;</a>
-		</p> {% if p.level %}
+		</p>{% if p.level %}
 		<p class="level"> {% assign l = p.level %}
 			{% include level.html %}
 		</p> {% endif %}
+		<p class="category">{{ p.categories[0] }}</p> 
 	</footer>
 </article> {% endfor %}

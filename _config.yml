@@ -22,15 +22,15 @@ i:
       label: RSS
       url: /feed.xml
     twitter: &twitter
-      label: 2465
+      label: Twitter
       url: http://twitter.com/clever_cloud
     facebook: &facebook
-      label: 89976
+      label: Facebook
       url: http://facebook.com/clever_cloud
     
     main: &nav_main
       title: Clever Cloud
-      all:   [*com, *support]
+      all:   [*com]
     social: &nav_social
       title: Follow & share
       all:   [*twitter, *facebook, *rss]
@@ -52,7 +52,7 @@ i:
       label: Authors
       id:    authors
     github: &link_github
-      label: Github
+      label: Find us on Github
       url: https://github.com/CleverCloud
     all: [*link_authors, *link_github]
   

@@ -15,11 +15,14 @@ layout: blog
 	</div>
 	<div class="content">
 		{{ content }}
-	</div> {% if page.author %} {% assign r = page.author %}
-	<footer class="row">
+	</div>
+	<footer class="row post-info"> {% if page.author %} {% assign r = page.author %}
 		<div class="span5 author">
 			{% include author.html %}
-		</div>
-		<div class="span3 social"> social </div>
-	</footer> {% endif %}
+		</div> {% endif %} {% if page.level %}
+		<p class="level"> {% assign l = page.level %}
+			{% include level.html %}
+		</p> {% endif %}
+		<p class="category">{{ page.categories[0] }}</p>
+	</footer>
 </article>
