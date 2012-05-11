@@ -32,7 +32,8 @@ body{
 		           inset 0 -35px 30px -40px #000;
 	}
 	.navbar .brand{
-		background:url("../img/logo.png") center;
+		background:url("../img/logo.png") center right no-repeat;
+		background-size:100%;
 		display:block;
 		height:40px;
 		line-height:40px;
@@ -221,7 +222,7 @@ body{
 			}
 			.social{
 				float:right;
-				margin:12px 0 9px;
+				margin:12px 0 9px 9px;
 			}
 			.fb_iframe_widget span{
 				top:-3px;
@@ -292,6 +293,28 @@ body{
 				}
 			#post #disqus_thread{
 				margin-top:10px;
+			}
+			#disqus_thread h3{
+				color:#111;
+				font-size:18px;
+				font-family:"CreteRoundRegular", serif;
+				line-height:24px;
+				text-shadow:0 1px 0 #343434;
+			}
+			#disqus_thread .dsq-textarea-background{
+				background:#aaa;
+				border-color:#aaa;
+			}
+			#dsq-sort-select{
+				background:#111;
+				border-color:#252525;
+				color:#aaa;
+				font-size:12px;
+				font-family:sans-serif;
+				line-height:24px;
+			}
+			#dsq-footer a em{
+				text-decoration:none;
 			}
 	.pagination{
 		margin:20px;
@@ -438,5 +461,11 @@ body{
 	body > #wrap{
 		margin:0 -20px;
 		padding:0 20px;
+	}
+}
+
+@media (max-width: 320px){
+	.navbar .brand{
+		width:100%;
 	}
 }
