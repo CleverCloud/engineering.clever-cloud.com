@@ -2,7 +2,7 @@
 layout: blog
 ---
 
-<article class="post">
+<article id="post" class="post">
 	<div class="page-header">
 		<p class="date">
 			{{ site.i.post.posted[page.lang] }}
@@ -24,5 +24,12 @@ layout: blog
 			{% include level.html %}
 		</p> {% endif %}
 		<p class="category">{{ page.categories[0] }}</p>
+		<div class="social">
+			<a href="https://twitter.com/share" class="twitter-share-button"
+				data-url="{{ site.url }}{{ page.url }}" data-text="{{ page.title }}"
+				data-hashtags="{{ page.categories[0] }}">
+				Tweet
+			</a>
+		</div>
 	</footer>
 </article>

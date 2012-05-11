@@ -24,7 +24,14 @@ lang:   en
 		<p class="level"> {% assign l = p.level %}
 			{% include level.html %}
 		</p> {% endif %}
-		<p class="category">{{ p.categories[0] }}</p> 
+		<p class="category">{{ p.categories[0] }}</p>
+		<div class="social">
+			<a href="https://twitter.com/share" class="twitter-share-button"
+				data-url="{{ site.url }}{{ p.url }}" data-text="{{ p.title }}"
+				data-hashtags="{{ p.categories[0] }}">
+				Tweet
+			</a>
+		</div>
 	</footer>
 </article> {% endfor %}
 <div class="pagination">
