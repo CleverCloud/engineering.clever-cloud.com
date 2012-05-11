@@ -6,7 +6,7 @@
 	<ul> {% case w %} {% when 'categories' %} {% for c in site.categories %}
 		<li> {% assign cid = c[0] %}
 			<a href="/{{ cid }}/">
-				<h3>{{ site.i.categories[cid] }}</h3>
+				<h3>{{ cid }}</h3>
 			</a>
 		</li> {% endfor %} {% when 'tags' %} {% when 'latest' %} {% for p in site.posts limit:10 %}
 		<li>

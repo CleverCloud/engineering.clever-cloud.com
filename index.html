@@ -20,10 +20,11 @@ lang:   en
 	<footer class="row">
 		<p class="span2 read-more">
 			<a href="{{ p.url }}">{{ site.i.post.more[page.lang] }} &raquo;</a>
-		</p> {% if p.level %}
+		</p>{% if p.level %}
 		<p class="level"> {% assign l = p.level %}
 			{% include level.html %}
 		</p> {% endif %}
+		<p class="category">{{ p.categories[0] }}</p> 
 	</footer>
 </article> {% endfor %}
 <div class="pagination">

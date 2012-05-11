@@ -79,12 +79,6 @@ i:
   categories:
     
     title: Categories
-    javascript: Javascript
-    scala: Scala
-    cloud: Cloud
-    yajas: Yajas
-    bianca: Bianca
-    openstack: Openstack
   
   authors:
     

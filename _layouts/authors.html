@@ -9,7 +9,7 @@ layout: blog
 			{{ page.title }}
 		</h2>
 	</div>
-	{{ content }}
+	<div class="content">{{ content }}</div>
 	<ul>{% for r in site.i.authors.all %}
 		<li class="author">
 			{% include author.html %}
