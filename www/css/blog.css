@@ -134,7 +134,7 @@ body{
 				text-transform:capitalize;
 			}
 		.post .content p,#single .content p{
-			font-size:16px;
+			font-size:14px;
 			padding-bottom:10px;
 			text-align:justify;
 			text-shadow:0 1px 0 #000;

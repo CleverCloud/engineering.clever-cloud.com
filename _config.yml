@@ -62,7 +62,7 @@ i:
     pub:
       en: Published
     date:
-      en: %m/%d/%Y
+      en: "%m/%d/%Y"
     posted:
       en: Posted on
     pic:
