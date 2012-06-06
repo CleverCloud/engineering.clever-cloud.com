@@ -23,7 +23,7 @@
 body{
 	background:#78151c url('../img/navbar-bg.png') bottom;
 	color:#ccc;
-	padding-top:40px;
+	padding-top:50px;
 }
 	.navbar-inner{
 		background:#78151c url('../img/navbar-bg.png');
@@ -35,7 +35,7 @@ body{
 		background:url("../img/logo.png") center right no-repeat;
 		background-size:100%;
 		display:block;
-		height:40px;
+		height:50px;
 		line-height:40px;
 		overflow:hidden;
 		padding:0;
@@ -43,10 +43,9 @@ body{
 		width:302px;
 	}
 		#nav-main a{
-			border-left:1px solid #953f4a;
 			color:#fcfcfc;
 			font-weight:bold;
-			padding:10px 15px;
+			padding:15px;
 			text-shadow:0 1px 0 #000;
 			text-transform:uppercase;
 		}
@@ -56,7 +55,7 @@ body{
 		box-shadow:0 1px 0 #992b34,
 		           0 0 1px #992b34,
 		           inset 0 1px 0 #591e22;
-		margin-top:7px;
+		margin-top:13px;
 		padding:3px 3px 2px;
 	}
 		#nav-social a{
@@ -70,7 +69,7 @@ body{
 			border-color:#a93333 #6b1a17 #692427 #98484b;
 			box-shadow:0 1px 0 #451719,
 					     0 -1px 0 #5f1d1f;
-			font-weight:bold;
+			font-weight:normal;
 			letter-spacing:1px;
 			line-height:15px;
 			padding-bottom:1px;
@@ -109,7 +108,8 @@ body{
 	}
 	#main{
 		background:#252525;
-		box-shadow:0 0 1px #151515;
+		box-shadow:-1px -1px 1px #151515,
+		           1px -1px 1px #151515;
 	}
 	.post,#single{
 		padding:20px 20px 60px;
@@ -152,8 +152,7 @@ body{
 			margin:0 -10px;
 		}
 			.read-more{
-				margin-left:9px;
-				margin-right:9px;
+				margin:0 9px 6px;
 			}
 			.read-more a,.category{
 				border:1px solid #151515;
@@ -167,7 +166,8 @@ body{
 				text-shadow:0 1px 0 #000;
 			}
 			.read-more a{
-				margin-top:9px;
+				margin-top:6px;
+				padding:6px 10px;
 			}
 				.read-more a:hover,.read-more a:focus{
 					box-shadow:inset 0 1px 0 #565656,
@@ -186,7 +186,6 @@ body{
 				border-right:none;
 				float:right;
 				font-size:12px;
-				font-weight:bold;
 				margin-top:9px;
 				padding-top:3px;
 				text-transform:capitalize;
@@ -334,7 +333,7 @@ body{
 				background:#111;
 				border-color:#111;
 				box-shadow:none;
-				color:#000;
+				color:#fcfcfc;
 				outline:none;
 				text-shadow:0 1px 0 #252525;
 			}
@@ -421,6 +420,7 @@ body{
 	}
 		#sitemap h3{
 			border-bottom:1px solid #4d1015;
+			box-shadow:0 1px 0 #a1373b;
 			color:#4d1015;
 			font-size:18px;
 			font-family:"CreteRoundRegular", serif;
