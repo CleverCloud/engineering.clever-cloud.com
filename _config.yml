@@ -13,7 +13,7 @@ i:
     follow: Follow
     
     com: &com
-      label: Website
+      label: Back to Clever Cloud
       url: http://www.clever-cloud.com
     support: &support
       label: Support
@@ -33,7 +33,7 @@ i:
       title: Clever Cloud
       all:   [*com]
     social: &nav_social
-      title: Follow & share
+      title: Follow us
       all:   [*twitter, *facebook, *rss]
   
   widgets:

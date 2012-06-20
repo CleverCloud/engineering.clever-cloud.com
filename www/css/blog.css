@@ -21,9 +21,12 @@
 
 }
 body{
-	background:#78151c url('../img/navbar-bg.png') bottom;
+	background:#252525 bottom;
 	color:#ccc;
 	padding-top:50px;
+}
+pre code {
+	color:#CCC;
 }
 	.navbar-inner{
 		background:#78151c url('../img/navbar-bg.png');
@@ -44,10 +47,9 @@ body{
 	}
 		#nav-main a{
 			color:#fcfcfc;
-			font-weight:bold;
 			padding:15px;
 			text-shadow:0 1px 0 #000;
-			text-transform:uppercase;
+			text-transform:capitalize;
 		}
 	#nav-social{
 		background:#682326;
@@ -105,6 +107,7 @@ body{
 	}
 	#wrap{
 		background:#161616 url('../img/body-bg.png');
+		padding-bottom: 35px;
 	}
 	#main{
 		background:#252525;
@@ -235,7 +238,7 @@ body{
 				margin-top:5px;
 			}
 				.author h4{
-					color:#111;
+					color:#fff;
 					font-size:20px;
 					font-family:"CreteRoundRegular", serif;
 					line-height:30px;
@@ -250,7 +253,7 @@ body{
 					display:none;
 				}
 				.author a{
-					color:#111;
+					color:#737373;
 					text-shadow:0 1px 0 #343434;
 				}
 					.author a:before{
@@ -385,7 +388,7 @@ body{
 			margin-bottom:10px;
 		}
 	.page-header h3, .sidebar-link a{
-		color:#111;
+		color:#737373;
 		font-size:20px;
 		font-family:"CreteRoundRegular", serif;
 		font-weight:bold;
@@ -419,16 +422,15 @@ body{
 		padding-top:40px;
 	}
 		#sitemap h3{
-			border-bottom:1px solid #4d1015;
-			box-shadow:0 1px 0 #a1373b;
-			color:#4d1015;
+			border-bottom: 1px solid black;
+			box-shadow: 0 1px 0 #343434;
+			color: #737373;
 			font-size:18px;
 			font-family:"CreteRoundRegular", serif;
 			font-weight:bold;
 			margin-bottom:9px;
 			padding-bottom:9px;
-			text-shadow:0 1px 0 #a1373b,
-			            0 0 1px #a1373b;
+			text-shadow: 0 1px 0 #343434;
 		}
 		#sitemap ul{
 			list-style:none;
@@ -438,14 +440,11 @@ body{
 			margin-bottom:5px;
 		}
 		#sitemap a{
-			color:#a1373b;
-			font-weight:bold;
-			text-shadow:0 1px 0 #4d1015,
-			            0 0 1px #4d1015;
-			text-transform:uppercase;
+			text-transform:capitalize;
+			color: #AAA;
 		}
 			#sitemap a:hover,#sitemap a:focus{
-				color:#c3595d;
+				color:#fcfcfc;
 			}
 
 @media (max-width: 979px){
