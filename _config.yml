@@ -27,7 +27,7 @@ i:
       url: http://twitter.com/clever_cloud
     facebook: &facebook
       label: Facebook
-      url: http://facebook.com/clever_cloud
+      url: http://facebook.com/clevercloudsas
     
     main: &nav_main
       title: Clever Cloud
