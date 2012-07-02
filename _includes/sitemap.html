@@ -3,7 +3,7 @@
 	<h3>{{ site.i.categories.title }}</h3>
 	<ul> {% for c in site.categories %} {% assign cid = c[0] %}
 		<li>
-			<a href="/{{ cid }}.html">
+			<a href="/{{ cid }}/">
 				{{ cid }}
 			</a>
 		</li> {% endfor %}
