@@ -7,6 +7,5 @@
 	{{ site.i.authors[r].name }} {% unless page.index %}
 	<small>{{ site.i.authors[r].job[page.lang] }}</small> {% endunless %}
 </h4>
-<a href="http://twitter.com/{{ site.i.authors[r].twitter }}" target="_blank">
-	{{ site.i.social.follow[page.lang] }} @{{ site.i.authors[r].twitter }}
-</a>
+
+<a href="https://twitter.com/{{ site.i.authors[r].twitter }}" class="twitter-follow-button" data-show-count="false" data-lang="{{page.lang}}">{{ site.i.social.follow[page.lang] }} @{{ site.i.authors[r].twitter }}</a>
