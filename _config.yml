@@ -133,7 +133,7 @@ i:
         en:     Sytem Administrator and Developer
       twitter:  juuduu
     
-    perennou:
+    keruspe:
       name:     Marc-Antoine Perennou
       job:
         en:     Java and GNU/Linux Hacker
@@ -163,4 +163,4 @@ i:
         en:     Scala, Akka & Netty Software Developer
       twitter:  blouerat
     
-    all: [adam, belouin, louerat, decherf, durillon, nivolle, perennou, tayrac, thommy]
+    all: [adam, belouin, louerat, decherf, durillon, nivolle, keruspe, tayrac, thommy]
