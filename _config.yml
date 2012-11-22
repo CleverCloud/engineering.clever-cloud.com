@@ -1,4 +1,11 @@
 url: http://engineer.clever-cloud.com
+
+portal:
+  website: &portal_website
+    title: Website
+    url:   http://www.clever-cloud.com
+  list: [*portal_website]
+
 paginate: 3
 
 i:
@@ -28,13 +35,32 @@ i:
     facebook: &facebook
       label: Facebook
       url: http://facebook.com/clevercloudsas
+    authors: &authors
+      label: Authors
+      id:    authors
+    github: &github
+      label: Find us on Github
+      url: https://github.com/CleverCloud
+    home: &home
+      label: Home page
+      url:   /
+    press: &press
+      label: Press blog
+      url:   http://blog.clever-cloud.com
+    contact: &contact
+      label: Contact
+      url:   http://www.clever-cloud.com/en/about
     
-    main: &nav_main
+    main:
       title: Clever Cloud
-      all:   [*com]
-    social: &nav_social
-      title: Follow us
       all:   [*twitter, *facebook, *rss]
+    sitemap:
+    - title: Clever Cloud
+      list: [*home, *authors, *press, *contact]
+    - title: Follow us
+      list: [*twitter, *facebook, *rss, *github]
+    - title: Categories
+      list: categories
   
   widgets:
     
@@ -138,6 +164,3 @@ i:
       twitter:  blouerat
     
     all: [adam, belouin, louerat, decherf, durillon, nivolle, perennou, tayrac, thommy]
-    
-  
-  sitemap: [*nav_main, *nav_social, *nav_links]
