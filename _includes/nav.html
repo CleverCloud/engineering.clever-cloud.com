@@ -1,31 +1,22 @@
-
 <div class="navbar-inner">
-	<div class="container">
-		<div class="span">
-		   <a class="brand" href="/">
-		   	{{ site.i.title[page.lang] }} : {{ site.i.brand }}
-		   </a>
-		</div>
-		<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</a>
-		<div class="nav-collapse pull-right">
-			<ul id="nav-main" class="nav"> {% for m in site.i.nav.main.all %}
-				<li>
-					<a href="{% if m.id %}/{{ m.id }}.html{% else %}{{ m.url }}{% endif %}">
-						{{ m.label }}
-					</a>
-				</li> {% endfor %}
-			</ul>
-			<ul id="nav-social" class="nav"> {% for m in site.i.nav.social.all %}
-				<li>
-					<a href="{% if m.id %}/{{ m.id }}.html{% else %}{{ m.url }}{% endif %}">
-						{{ m.label }}
-					</a>
-				</li> {% endfor %}
-			</ul>
-		</div>
-	</div>
+  <div id="headbar" class="container">
+    <div class="brand">
+      <a href="/" class="back">
+        <img src="/www/img/clever-cloud.png" alt="&laquo;"/>
+      </a>
+      <a href="/" class="title">{{ site.i.brand }}</a>
+    </div>
+    <ul class="nav pull-right">{% for link in site.i.nav.main.all %}
+      <li>
+        <a href="{% if link.id %}/{{ link.id }}.html{% else %}{{ link.url }}{% endif %}">
+          {{ link.label }}
+        </a>
+      </li>{% endfor %}{% for link in site.portal.list %}
+      <li>
+        <div class="btn-group">
+        	<a href="{{ link.url }}" class="btn">{{ link.title }}</a>
+        </div>
+      </li>{% endfor %}
+    </ul>
+  </div>
 </div>
