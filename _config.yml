@@ -42,8 +42,8 @@ i:
       label: Find us on Github
       url: https://github.com/CleverCloud
     home: &home
-      label: Home page
-      url:   /
+      label: Corporate website
+      url:   http://www.clever-cloud.com
     press: &press
       label: Press blog
       url:   http://blog.clever-cloud.com

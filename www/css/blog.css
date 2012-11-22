@@ -459,6 +459,9 @@ pre code {
 .fb_iframe_widget {
   margin: 0;
 }
+.post .fb_iframe_widget {
+	width: 75px;
+}
 .fb_iframe_widget span,
 .fb_iframe_widget iframe {
   width: 100% !important;
