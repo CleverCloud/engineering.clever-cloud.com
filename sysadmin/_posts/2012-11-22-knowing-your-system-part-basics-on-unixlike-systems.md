@@ -3,7 +3,7 @@ lang:  en
 layout: post
 
 title: "Knowing your system - Part 1 - Basis on UNIX-like systems"
-author: "perennou"
+author: "keruspe"
 level: 1
 ---
 
@@ -67,7 +67,7 @@ interact with the real hardware.
 All of these files are stored in a tree respecting the [Filesystem Hierarchy Standard](http://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard).
 
 * / is the parent folder of everything, we call it "slash".
-* /boot is the folder where everything needed by the bootloader (The menu where you select which OS to start).
+* /boot is the folder where everything needed by the bootloader (The menu where you select which OS to start) is stored.
 * /dev contains all the files corresponding to hardware devices or core functionnalities.
 * /etc contains all the system-wide configuration files.
 * /home contains the personnal directories of the users.
@@ -92,14 +92,14 @@ There is now a standard filesystem hierarchy for data stored in each user home d
 
 ## The GNU/Linux boot process
 
-When you start your computer, you (usually) gets to a bootloader. This bootloader asks you to select which
+When you start your computer, you (usually) get to a bootloader. This bootloader asks you to select which
 system you want to start. What you actually do when you select an entry is to select a couple of informations:
 
 * A kernel (you can have several ones installed at the same time, but you only boot using one of them).
 * The part of your hard drive where your system lays.
 * Extra configuration for your kernel.
 
-When your kernel has successfully initialized everything, it the gives the power to a root process, comonly
+When your kernel has successfully initialized everything, it then gives the power to a root process, comonly
 called "init", which goal is to track all the other processes that you and your system will run.
 The init process will then reach a few breakpoints (which can be called runlevels, or targets). To each of these
 breakpoints correspond a list of process that must be started. This is how all the root components of your system are
