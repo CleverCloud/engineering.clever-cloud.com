@@ -7,7 +7,7 @@ author: "keruspe"
 level: 2
 ---
 
-[As we last saw](http://www.imagination-land.org/posts/2012-11-22-knowing-your-system-part-basics-on-unixlike-systems.html),
+[As we last saw](http://engineering.clever-cloud.com/sysadmin/2012/11/22/knowing-your-system-part-basics-on-unixlike-systems.html),
 when we start an UNIX-like system, the kernel gives the hand to a main process called "init". We'll now see how it
 works.
 
