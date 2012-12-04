@@ -431,7 +431,6 @@ pre code {
       color:            #fff;
       display:          inline-block;
       font-size:        15px;
-      font-weight:      bold;
       height:           48px;
       line-height:      48px;
       margin:           -1px 0;
@@ -456,15 +455,8 @@ pre code {
    box-shadow:    0 1px 0 #812730 inset,
                   0 1px 0 #812730;
 }
-.fb_iframe_widget {
-  margin: 0;
-}
-.post .fb_iframe_widget {
-	width: 75px;
-}
-.fb_iframe_widget span,
-.fb_iframe_widget iframe {
-  width: 100% !important;
+.fb-like {
+  display: block;
 }
 .twitter-follow-button{
 	margin-top:10px;
