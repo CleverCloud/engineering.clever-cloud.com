@@ -77,10 +77,10 @@ It also support a hooks mechanism.
 We'll see some more advanced paludis features in a next post of the "knowing your system" saga.
 
 Last thing, The way I update my system is:
-
-    cave sync
-    cave resolve world -c -km -Km -Cs
-
+{% highlight javascript%}
+cave sync
+cave resolve world -c -km -Km -Cs
+{% endhighlight %}
 It syncs repositories with upstream to get latest versions of the packages, and then resolve `world` which is the set
 containing all the packages you have installed, with a complete dependency tree, as deep as it can, with `-c` aka
 `--complete`  and reinstalling all packages for which metadata have changed because of `-km -Km` aka `--keep
