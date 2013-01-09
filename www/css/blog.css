@@ -20,6 +20,14 @@
     font-style: normal;
 
 }
+::-moz-selection {
+background:#78151C;
+color:white;
+}
+::selection {
+background: #78151C;
+color:white;
+}
 body{
 	background:#252525;
 	color:#ccc;
@@ -62,7 +70,6 @@ pre code {
 			font-size:14px;
 			padding-bottom:10px;
 			text-align:justify;
-			text-shadow:0 1px 0 #000;
 		}
 		.highlight pre{
 			background:#111;
@@ -269,6 +276,10 @@ pre code {
 	}
 	a,.post h2 a,#single h2 a,#categories a{
 		color:#aaa;
+	}
+	/*Underline only content of blog post*/
+	#post.post div.content p a{
+		text-decoration:underline;
 	}
 	#categories a{
 		border-bottom:1px solid #000;
