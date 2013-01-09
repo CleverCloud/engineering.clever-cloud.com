@@ -20,6 +20,14 @@
     font-style: normal;
 
 }
+::-moz-selection {
+background:#78151C;
+color:white;
+}
+::selection {
+background: #78151C;
+color:white;
+}
 body{
 	background:#252525;
 	color:#ccc;
