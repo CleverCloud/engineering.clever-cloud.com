@@ -277,6 +277,10 @@ pre code {
 	a,.post h2 a,#single h2 a,#categories a{
 		color:#aaa;
 	}
+	/*Underline only content of blog post*/
+	#post.post div.content p a{
+		text-decoration:underline;
+	}
 	#categories a{
 		border-bottom:1px solid #000;
 		box-shadow:0 1px 0 #343434;
