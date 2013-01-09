@@ -40,7 +40,7 @@ The concept is simple:
   and modifying the `sync` line
 
 A sample configuration file:
-
+{% highlight properties%}
     format = e
     location = /var/db/paludis/repositories/mybinaries
     sync = file:///var/db/paludis/repositories/mybinaries
@@ -49,7 +49,7 @@ A sample configuration file:
     binary_distdir = /var/cache/paludis/distfiles
     binary_keywords_filter = amd64 ~amd64
     binary_uri_prefix = http://mybinaries.com/exherbo/
-
+{% endhighlight %}
 `location` is the place where you put your empty repository.
 
 `sync` is the same that `location` on the compilation node, and may refer to a git repository where you'll publish your binary repository on the other nodes.
@@ -69,16 +69,16 @@ packages without having to compile them on all of your machines.
 
 It's pretty simple to make binary packages, all you have to do is first to generate the binaries for everything you have
 installed:
-
+{% highlight bash%}
     cave resolve -xc world --make binaries --make-dependencies all
-
+{% endhighlight %}
 It will automatically generate packages and put tarballs in your distfiles directory. If you run this after updating
 your compilation box, it will only generate new binary packages for those that have changed.
 
 Last thing you might want to know: to create a binary package for a package you do not have installed yet, just run
-
+{% highlight bash%}
     cave resolve -x --make binaries --make-dependencies all <insert a package name here>
-
+{% endhighlight %}
 It will create packages for all the dependencies, installing it afterwards, and finish by making the package for the
 software you asked.
 
