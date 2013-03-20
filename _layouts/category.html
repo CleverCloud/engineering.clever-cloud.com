@@ -5,7 +5,7 @@ layout: blog
 <article class="post">
 	<div class="page-header">
 		<h2>
-			<a href="/">{{ site.i.home }}</a> &raquo;
+      <a href="{{ site.link.base.url }}">{{ site.link.base[page.locale] }}</a> &raquo;
 			{{ page.cat }}
 		</h2>
 	</div>
@@ -13,35 +13,29 @@ layout: blog
 		{{ content }}
 	</div>
 </article>
-{% for p in site.categories[page.cat] %}
+{% for post in site.categories[page.cat] %}
 <article class="post">
 	<div class="page-header">
 		<p class="date">
-			{{ site.i.post.posted[page.lang] }}
-			{{ p.date | date: site.i.post.date[page.lang] }}
+			{{ site.post.posted[page.locale] }}
+			{{ post.date | date: site.post.date[page.locale] }}
 		</p>
 		<h2>
-			<a href="{{ p.url }}">{{ p.title }}</a>
+			<a href="{{ post.url }}">{{ post.title }}</a>
 		</h2>
 	</div>
-	<div class="content">{{ p.content | split: "<div class='highlight'>" | first | truncatewords: 90 }}</div>
+	<div class="content">{{ post.content | split: "<div class='highlight'>" | first | truncatewords: 90 }}</div>
 	<footer class="row post-info">
 		<p class="span2 read-more">
-			<a href="{{ p.url }}">{{ site.i.post.more[page.lang] }} &raquo;</a>
-		</p>{% if p.level %}
-		<p class="level"> {% assign l = p.level %}
+			<a href="{{ post.url }}">{{ site.post.more[page.locale] }} &raquo;</a>
+		</p>{% if post.level %}
+		<p class="level"> {% assign l = post.level %}
 			{% include level.html %}
-		</p> {% endif %}
-		<p class="category">{{ p.categories[0] }}</p>
+		</p>{% endif %}
+		<p class="category">{{ post.categories[0] }}</p>
 		<div class="social">
-			<a href="https://twitter.com/share" class="twitter-share-button"
-				data-url="{{ site.url }}{{ p.url }}" data-text="{{ p.title }}"
-				data-hashtags="{{ p.categories[0] }}">
-				Tweet
-			</a>
-			<div class="fb-like" data-href="{{ site.url }}{{ p.url }}"
-				data-send="false" data-layout="button_count" data-width="90"
-				data-show-faces="false"></div>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ site.url }}{{ post.url }}" data-text="{{ post.title }}" data-hashtags="{{ post.categories[0] }}">Tweet</a>
+			<div class="fb-like" data-href="{{ site.url }}{{ post.url }}" data-send="false" data-layout="button_count" data-width="90"	data-show-faces="false"></div>
 		</div>
 	</footer>
-</article> {% endfor %}
+</article>{% endfor %}

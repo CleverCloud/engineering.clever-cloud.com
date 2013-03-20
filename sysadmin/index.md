@@ -1,6 +1,6 @@
 ---
-lang: en
 layout: category
+locale: en
 cat: sysadmin
 ---
 
