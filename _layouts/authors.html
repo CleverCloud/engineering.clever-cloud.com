@@ -5,14 +5,23 @@ layout: blog
 <div id="single">
 	<div class="page-header">
 		<h2>
-			<a href="/">{{ site.i.home }}</a> &raquo;
+      <a href="{{ site.link.base.url }}">{{ site.link.base[page.locale] }}</a> &raquo;
 			{{ page.title }}
 		</h2>
 	</div>
 	<div class="content">{{ content }}</div>
-	<ul>{% for r in site.i.authors.all %}
+	<ul>{% for author in site.author.list %}
 		<li class="author">
-			{% include author.html %}
-		</li> {% endfor %}
+      <div class="avatar">
+        <img src="http://api.twitter.com/1/users/profile_image/{{ author.twitter }}" alt="{{ site.post.pic[page.locale] }} {{ author.name }}"/>
+      </div>
+      <h4>
+        {{ author.name }}
+	      <small>{{ author.job[page.locale] }}</small>
+      </h4>
+      <a href="https://twitter.com/{{ author.twitter }}" class="twitter-follow-button" data-show-count="false" data-lang="{{ page.locale }}">
+        @{{ site.i.authors[r].twitter }}
+      </a>
+		</li>{% endfor %}
 	</ul>
 </div>

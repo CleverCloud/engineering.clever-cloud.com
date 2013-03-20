@@ -1,16 +1,15 @@
 ---
 layout: blog
+locale: en
 index: Yes
-
-lang:   en
 ---
 
 {% for p in paginator.posts %}
 <article class="post">
 	<div class="page-header">
 		<p class="date">
-			{{ site.i.post.posted[page.lang] }}
-			{{ p.date | date: site.i.post.date[page.lang] }}
+			{{ site.i.post.posted[page.locale] }}
+			{{ p.date | date: site.i.post.date[page.locale] }}
 		</p>
 		<h2>
 			<a href="{{ p.url }}">{{ p.title }}</a>
@@ -19,7 +18,7 @@ lang:   en
 	<div class="content">{{ p.content | split: "<div class='highlight'>" | first | truncatewords: 90 }}</div>
 	<footer class="row post-info">
 		<p class="span2 read-more">
-			<a href="{{ p.url }}">{{ site.i.post.more[page.lang] }} &raquo;</a>
+			<a href="{{ p.url }}">{{ site.i.post.more[page.locale] }} &raquo;</a>
 		</p>{% if p.level %}
 		<p class="level"> {% assign l = p.level %}
 			{% include level.html %}

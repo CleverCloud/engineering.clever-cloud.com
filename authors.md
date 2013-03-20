@@ -1,7 +1,7 @@
 ---
 layout: authors
+locale: en
 
-lang:   en
 title: Authors
 ---
 
