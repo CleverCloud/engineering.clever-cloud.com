@@ -1,0 +1,48 @@
+---
+layout: blog
+---
+
+{% for post in paginator.posts %}
+<article class="post">
+	<div class="page-header">
+		<p class="date">
+			{{ site.post.posted[page.locale] }}
+			{{ post.date | date: site.post.date[page.locale] }}
+		</p>
+		<h2>
+			<a href="{{ post.url }}">{{ post.title }}</a>
+		</h2>
+	</div>
+	<div class="content">{{ post.content | split: "<div class='highlight'>" | first | truncatewords: 90 }}</div>
+	<footer class="row post-info">
+		<p class="span2 read-more">
+			<a href="{{ post.url }}">{{ site.post.more[page.locale] }} &raquo;</a>
+		</p>{% if post.level %}
+		<p class="level"> {% assign l = post.level %}
+			{% include level.html %}
+		</p> {% endif %}
+		<p class="category">{{ post.categories[0] }}</p>
+		<div class="social">
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ site.url }}{{ post.url }}" data-text="{{ post.title }}" data-hashtags="{{ post.categories[0] }}">
+				Tweet
+			</a>
+			<span class="fb-like" data-href="{{ site.url }}{{ post.url }}" data-send="false" data-layout="button_count" data-width="103" data-show-faces="false"></span>
+		</div>
+	</footer>
+</article>{% endfor %}
+<div class="pagination">
+	<ul>{% if paginator.page > 1 %}
+		<li> 
+      <a href="/{% unless paginator.page == 2 %}page{{ paginator.page | minus: 1 }}/{% endunless %}">
+				&laquo;
+			</a>
+		</li>{% endif %}
+		<li{% if paginator.page == 1 %} class="active"{% endif %}>
+			<a href="/">1</a>
+		</li>{% for i in (2..paginator.total_pages) %}
+		<li{% if paginator.page == i %} class="active"{% endif %}>
+			<a href="/page{{ i }}/">{{ i }}</a>
+		</li> {% endfor %} {% if paginator.page < paginator.total_pages %}
+		<li><a href="/page{{ paginator.page | plus: 1 }}/">&raquo;</a></li>{% endif %}
+	</ul>
+</div>
