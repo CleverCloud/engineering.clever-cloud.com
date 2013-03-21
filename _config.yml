@@ -126,7 +126,8 @@ post:
       en: Intermediate
     expert: &post_level_expert
       en: Expert
-    list: [*post_level_beginner, *post_level_intermediate, *post_level_intermediate, *post_level_expert, *post_level_expert]
+    # first element is just a trick: the level in posts is 1-based while this list is 0-based.
+    list: ["Brain Dead", *post_level_beginner, *post_level_intermediate, *post_level_intermediate, *post_level_expert, *post_level_expert]
 
 # pagination
 pages:
