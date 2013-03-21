@@ -1,5 +1,5 @@
 ---
-layout: authors
+layout: author-list
 locale: en
 
 title: Authors
