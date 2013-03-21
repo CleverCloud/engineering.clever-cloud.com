@@ -1,5 +1,5 @@
 ---
-lang:  en
+locale: en
 layout: post
 
 title: "Kickstart your scala API client by turning JSON into case classes."

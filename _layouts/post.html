@@ -5,8 +5,8 @@ layout: blog
 <article id="post" class="post">
 	<div class="page-header">
 		<p class="date">
-			{{ site.i.post.posted[page.lang] }}
-			{{ page.date | date: site.i.post.date[page.lang] }}
+			{{ site.post.posted[page.locale] }}
+			{{ page.date | date: site.post.date[page.locale] }}
 		</p>
 		<h2>
 			{{ page.title }}
@@ -15,29 +15,35 @@ layout: blog
 	<div class="content">
 		{{ content }}
 	</div>
-	<footer class="row post-info"> {% if page.author %} {% assign r = page.author %}
-		<div class="span5 author">
-			{% include author.html %}
-		</div> {% endif %} {% if page.level %}
-		<p class="level"> {% assign l = page.level %}
+	<footer class="row post-info">{% if page.author %}
+    <div class="span5 author">
+      <div class="avatar">
+	      <img src="http://api.twitter.com/1/users/profile_image/{{ site.author[page.author].twitter }}" alt="{{ site.post.pic[page.locale] }} {{ site.author[page.author].name }}"/>
+      </div>
+      <h4>
+        {{ site.author[page.author].name }}
+	      <small>{{ site.author[page.author].job[page.locale] }}</small>
+      </h4>
+      <a href="https://twitter.com/{{ site.author[page.author].twitter }}" class="twitter-follow-button" data-show-count="false" data-lang="{{ page.locale }}">
+        {{ site.social.follow[page.locale] }} @{{ site.author[page.author].twitter }}
+      </a>
+		</div>{% endif %}{% if page.level %}
+		<p class="level">{% assign l = page.level %}
 			{% include level.html %}
-		</p> {% endif %}
+		</p>{% endif %}
 		<p class="category">{{ page.categories[0] }}</p>
 		<div class="social">
-			<a href="https://twitter.com/share" class="twitter-share-button"
-				data-url="{{ site.url }}{{ page.url }}" data-text="{{ page.title }}"
-				data-hashtags="{{ page.categories[0] }}">
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ site.url }}{{ page.url }}" data-text="{{ page.title }}"	data-hashtags="{{ page.categories[0] }}">
 				Tweet
 			</a>
-			<div class="fb-like" data-href="{{ site.url }}{{ page.url }}"
-				data-send="false" data-layout="button_count" data-width="90"
-				data-show-faces="false"></div>
+			<span class="fb-like" data-href="{{ site.url }}{{ page.url }}" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false"></span>
 		</div>
 	</footer>
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
 		 var disqus_shortname  = 'engineerclevercloud';
-		 var disqus_developer = 1; //<< remove this line before prod
+     var disqus_title      = '{{ page.title }}';
+     var disqus_url        = '{{ site.url }}{{ page.url }}';
 		 /* * * DON'T EDIT BELOW THIS LINE * * */
 		 (function() {
 		     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -47,5 +53,4 @@ layout: blog
 	</script>
 	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-
 </article>
