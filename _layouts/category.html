@@ -29,8 +29,11 @@ layout: blog
 		<p class="span2 read-more">
 			<a href="{{ post.url }}">{{ site.post.more[page.locale] }} &raquo;</a>
 		</p>{% if post.level %}
-		<p class="level"> {% assign l = post.level %}
-			{% include level.html %}
+    <p class="level">
+      <span title="{{ site.post.level.list[post.level][page.locale] }}">{% for i in (1..post.level) %}
+	      <span class="up">&#9733;</span>{% endfor %}{% for i in (post.level..4) %}
+        &#9733;{% endfor %}
+      </span>
 		</p>{% endif %}
 		<p class="category">{{ post.categories[0] }}</p>
 		<div class="social">

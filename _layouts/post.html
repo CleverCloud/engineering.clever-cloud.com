@@ -28,8 +28,11 @@ layout: blog
         {{ site.social.follow[page.locale] }} @{{ site.author[page.author].twitter }}
       </a>
 		</div>{% endif %}{% if page.level %}
-		<p class="level">{% assign l = page.level %}
-			{% include level.html %}
+    <p class="level">
+      <span title="{{ site.post.level.list[page.level][page.locale] }}">{% for i in (1..page.level) %}
+	      <span class="up">&#9733;</span>{% endfor %}{% for i in (page.level..4) %}
+        &#9733;{% endfor %}
+      </span>
 		</p>{% endif %}
 		<p class="category">{{ page.categories[0] }}</p>
 		<div class="social">
