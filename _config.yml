@@ -115,7 +115,7 @@ i:
         en:     Clever Cloud C.E.O
       twitter:  waxzce
     
-    decherf:
+    kdecherf:
       name:     Kévin Decherf
       job:
         en:     Office & Production Manager
@@ -163,4 +163,4 @@ i:
         en:     Scala, Akka & Netty Software Developer
       twitter:  blouerat
     
-    all: [adam, belouin, louerat, decherf, durillon, nivolle, keruspe, tayrac, thommy]
+    all: [adam, belouin, louerat, kdecherf, durillon, nivolle, keruspe, tayrac, thommy]
