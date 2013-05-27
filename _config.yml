@@ -14,7 +14,7 @@ tpl:
 link:
   authors: &link_authors
     en:  Authors
-    url: authors.html
+    url: /authors.html
   base: &link_base
     en:  Clever Cloud Engineering Blog
     url: /
@@ -25,7 +25,7 @@ link:
       en: Corporate website
   contact: &link_contact
     en:  Contact
-    url: http://www.clever-cloud.com/en/about
+    url: http://www.clever-cloud.com/en/contact.html
   facebook: &link_facebook
     en:  Facebook
     url: http://facebook.com/clevercloudsas
@@ -95,12 +95,12 @@ author:
     job:
       en:     Interaction Designer
     twitter:  crmfrsh
-  thommy: &author_thommy
-    name:     Kevin Thommy
+  thommy: &author_foucault
+    name:     Régis Foucault
     job:
-      en:     '"Integraphic" Designer'
-    twitter:  mon_ke
-  list: [*author_adam, *author_belouin, *author_kdecherf, *author_durillon, *author_keruspe, *author_louerat, *author_nivolle, *author_tayrac, *author_thommy]
+      en:     Platform Evangelist
+    twitter:  R_Foucault
+  list: [*author_adam, *author_belouin, *author_kdecherf, *author_durillon, *author_keruspe, *author_louerat, *author_nivolle, *author_tayrac, *author_foucault]
 
 # sidebar
 sidebar:
