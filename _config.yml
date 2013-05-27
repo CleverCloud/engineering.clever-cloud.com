@@ -1,166 +1,143 @@
-url: http://engineering.clever-cloud.com
+# jekyll generation settings
+url:      http://engineering.clever-cloud.com
 pygments: true
-portal:
-  website: &portal_website
-    title: Website
-    url:   http://www.clever-cloud.com
-  list: [*portal_website]
-
 paginate: 3
 
-i:
-  
-  brand: Clever Cloud Engineering Blog
-  title:
-    en: Engineer
-  home: Home
-  
-  nav:
-  
-    follow: Follow
-    
-    com: &com
-      label: Back to Clever Cloud
-      url: http://www.clever-cloud.com
-    support: &support
-      label: Support
-      id: support
-    
-    rss: &rss
-      label: RSS
-      url: /feed.xml
-    twitter: &twitter
-      label: Twitter
-      url: http://twitter.com/clever_cloud
-    facebook: &facebook
-      label: Facebook
-      url: http://facebook.com/clevercloudsas
-    authors: &authors
-      label: Authors
-      id:    authors
-    github: &github
-      label: Find us on Github
-      url: https://github.com/CleverCloud
-    home: &home
-      label: Corporate website
-      url:   http://www.clever-cloud.com
-    press: &press
-      label: Press blog
-      url:   http://blog.clever-cloud.com
-    contact: &contact
-      label: Contact
-      url:   http://www.clever-cloud.com/en/about
-    
-    main:
-      title: Clever Cloud
-      all:   [*twitter, *facebook, *rss]
-    sitemap:
-    - title: Clever Cloud
-      list: [*home, *authors, *press, *contact]
-    - title: Follow us
-      list: [*twitter, *facebook, *rss, *github]
-    - title: Categories
-      list: categories
-  
-  widgets:
-    
-    categories:
-      bare: Yes
-    tags:
-      bare: Yes
-    latest:
-      en: Latest posts
-    all: [categories, tags, latest]
-  
-  links: &nav_links
-    
-    title: Links
-    authors: &link_authors
-      label: Authors
-      id:    authors
-    github: &link_github
-      label: Find us on Github
-      url: https://github.com/CleverCloud
-    all: [*link_authors, *link_github]
-  
-  post:
-    
-    pub:
-      en: Published
-    date:
-      en: "%m/%d/%Y"
-    posted:
-      en: Posted on
-    pic:
-      en: Profile picture of
-    more:
-      en: Read more
-  
-  pages:
-    
-    next:
-      en: Next page
-    prev:
-      en: Previous page
-  
+# locales by prefered order, default goes first
+locale: [en]
+
+# message templates
+tpl:
+
+# reccurent links. internal links without the first slash, to allow localized
+# urls like: /{locale/}page/subpage.html
+link:
+  authors: &link_authors
+    en:  Authors
+    url: authors.html
+  base: &link_base
+    en:  Clever Cloud Engineering Blog
+    url: /
+  com: &link_com
+    en:  Website
+    url: http://clever-cloud.com
+    long:
+      en: Corporate website
+  contact: &link_contact
+    en:  Contact
+    url: http://www.clever-cloud.com/en/about
+  facebook: &link_facebook
+    en:  Facebook
+    url: http://facebook.com/clevercloudsas
+  github: &link_github
+    en:  Find us on Github
+    url: https://github.com/CleverCloud
+  press: &link_press
+    en:  Press blog
+    url: http://blog.clever-cloud.com
+  rss: &link_rss
+    en:  RSS
+    url: feed.xml
+  twitter: &link_twitter
+    en:  Twitter
+    url: http://twitter.com/clever_cloud
+
+# navs (lists of links)
+nav:
+  portal:  [*link_com]
+  social:  [*link_twitter, *link_facebook, *link_rss]
+  sidebar: [*link_authors, *link_github]
+  footer:
+  - en:   Clever Cloud
+    list: [*link_com, *link_authors, *link_press, *link_contact]
+  - en:   Follow us
+    list: [*link_twitter, *link_facebook, *link_rss, *link_github]
+
+# authors
+author:
+  adam: &author_adam
+    name:     Quentin Adam
+    job:
+      en:     Clever Cloud C.E.O
+    twitter:  waxzce
+  belouin: &author_belouin
+    name:     Rodolphe Belouin
+    job:
+      en:     Javascript & Scala Enthousiast
+    twitter:  rbelouin
+  kdecherf: &author_kdecherf
+    name:     Kévin Decherf
+    job:
+      en:     Office & Production Manager
+    twitter:  kdecherf
+  durillon: &author_durillon
+    name:     Julien Durillon
+    job:
+      en:     Sytem Administrator and Developer
+    twitter:  juuduu
+  keruspe: &author_keruspe
+    name:     Marc-Antoine Perennou
+    job:
+      en:     Java and GNU/Linux Hacker
+    twitter:  keruspe
+  louerat: &author_louerat
+    name:     Bastien Louerat
+    job:
+      en:     Scala, Akka & Netty Software Developer
+    twitter:  blouerat
+  nivolle: &author_nivolle
+    name:     Clément Nivolle
+    job:
+      en:     Project Manager
+    twitter:  cnivolle
+  tayrac: &author_tayrac
+    name:     Arthur Tayrac
+    job:
+      en:     Interaction Designer
+    twitter:  crmfrsh
+  thommy: &author_thommy
+    name:     Kevin Thommy
+    job:
+      en:     '"Integraphic" Designer'
+    twitter:  mon_ke
+  list: [*author_adam, *author_belouin, *author_kdecherf, *author_durillon, *author_keruspe, *author_louerat, *author_nivolle, *author_tayrac, *author_thommy]
+
+# sidebar
+sidebar:
+  latest:
+    en: Latest posts
+
+# full-page post
+post:
+  pub:
+    en: Published
+  date:
+    en: "%m/%d/%Y"
+  posted:
+    en: Posted on
+  pic:
+    en: Profile picture of
+  more:
+    en: Read more
+  level:
+    beginner: &post_level_beginner
+      en: Beginner
+    intermediate: &post_level_intermediate
+      en: Intermediate
+    expert: &post_level_expert
+      en: Expert
+    # first element is just a trick: the level in posts is 1-based while this list is 0-based.
+    list: ["Brain Dead", *post_level_beginner, *post_level_intermediate, *post_level_intermediate, *post_level_expert, *post_level_expert]
+
+# pagination
+pages:
+  next:
+    en: Next page
+  prev:
+    en: Previous page
+
+# footer
+footer:
   categories:
-    
-    title: Categories
-  
-  authors:
-    
-    adam:
-      name:     Quentin Adam
-      job:
-        en:     Clever Cloud C.E.O
-      twitter:  waxzce
-    
-    kdecherf:
-      name:     Kévin Decherf
-      job:
-        en:     Office & Production Manager
-      twitter:  kdecherf
-    
-    tayrac:
-      name:     Arthur Tayrac
-      job:
-        en:     Interaction Designer
-      twitter:  crmfrsh
-    
-    durillon:
-      name:     Julien Durillon
-      job:
-        en:     Sytem Administrator and Developer
-      twitter:  juuduu
-    
-    keruspe:
-      name:     Marc-Antoine Perennou
-      job:
-        en:     Java and GNU/Linux Hacker
-      twitter:  keruspe
-    
-    nivolle:
-      name:     Clément Nivolle
-      job:
-        en:     Project Manager
-      twitter:  cnivolle
-    
-    belouin:
-      name:     Rodolphe Belouin
-      job:
-        en:     Javascript & Scala Enthousiast
-      twitter:  rbelouin
-    
-    thommy:
-      name:     Kevin Thommy
-      job:
-        en:     '"Integraphic" Designer'
-      twitter:  mon_ke
-    
-    louerat:
-      name:     Bastien Louerat
-      job:
-        en:     Scala, Akka & Netty Software Developer
-      twitter:  blouerat
-    
-    all: [adam, belouin, louerat, kdecherf, durillon, nivolle, keruspe, tayrac, thommy]
+    en: Categories
+---

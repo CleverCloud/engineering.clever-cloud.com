@@ -1,5 +1,5 @@
 ---
-lang:  en
+locale:  en
 layout: post
 
 title: "The PostgreSQL JDBC Driver is now PgBouncer compliant"

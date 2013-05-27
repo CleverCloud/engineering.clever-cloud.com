@@ -1,5 +1,5 @@
 ---
-lang:  en
+locale: en
 layout: post
 
 title: "Knowing your system - Part 5 - Source-based distributions: the binary way"

@@ -1,6 +1,6 @@
 ---
-lang: en
-layout: category
+layout: category-post-list
+locale: en
 cat: sysadmin
 ---
 

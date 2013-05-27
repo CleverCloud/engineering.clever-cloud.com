@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html lang="{{ page.locale }}">
+	<head>
+		<meta charset="UTF-8"/>
+		<title> {% if page.title %}
+			{{ page.title }} | {% endif %}
+			{{ site.link.base[page.locale] }}
+		</title>
+		<meta name="description" content="Engineering Blog of Clever Cloud's technical team. From dev to sysadmin, get a quick overview of what we've discovered through Clever Cloud's building."/>
+		<link rel="icon" type="image/png" href="/img/favicon.png" />
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/blog.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/pygments.css"/>
+		<script type="text/javascript" src="/js/jquery.min.js"></script>
+		<script type="text/javascript" src="/js/bootstrap-collapse.js"></script>
+		<script type="text/javascript" src="/js/jquery.githubRepoWidget.min.js"></script>
+	</head>
+	<body>
+    <nav class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div id="headbar" class="container">
+          <div class="brand">
+            <a href="/" class="back">
+              <img src="/img/clever-cloud.png" alt="&laquo;"/>
+            </a>
+            <a href="{{ site.link.base.url }}" class="title">{{ site.link.base[page.locale] }}</a>
+          </div>
+          <ul class="nav pull-right">{% for link in site.nav.social %}
+            <li>
+            <a href="{{ link.url }}">
+                {{ link[page.locale] }}
+              </a>
+            </li>{% endfor %}{% for link in site.nav.portal %}
+            <li>
+              <div class="btn-group">
+                <a href="{{ link.url }}" class="btn">{{ link[page.locale] }}</a>
+              </div>
+            </li>{% endfor %}
+          </ul>
+        </div>
+      </div>
+		</nav>
+		<div id="wrap">
+			<section class="container">
+				<div class="row">
+					<div id="main" class="span9">
+						{{ content }}
+					</div>
+					<aside class="span3">
+            <div id="categories">
+              <ul>{% for cat in site.categories %}
+                <li>
+                  <a href="/{{ cat[0] }}/"><h3>{{ cat[0] }}</h3></a>
+                </li>{% endfor %}
+              </ul>
+            </div>
+            <div id="latest">
+              <div class="page-header">
+                <h3>{{ site.sidebar.latest[page.locale] }}</h3>
+              </div>
+              <ul>{% for p in site.posts limit:10 %}
+                <li>
+                  <a href="{{ p.url }}">
+                    {{ p.date | date: site.post.date[page.locale] }} : {{ p.title }}
+                  </a>
+                </li>{% endfor %}
+              </ul>
+            </div>{% for link in site.nav.sidebar %}
+            <div class="sidebar-link">
+              <a href="{{ link.url }}">{{ link[page.locale] }}</a>
+            </div>{% endfor %}
+					</aside>
+				</div>
+			</section>
+		</div>
+		<footer>
+			<div class="container">
+				<div id="sitemap" class="row">{% for col in site.nav.footer %}
+          <div class="span3">
+            <h3>{{ col[page.locale] }}</h3>
+            <ul>{% for link in col.list %}
+              <li>
+                <a href="{{ link.url }}">{{ link[page.locale] }}</a>
+              </li>{% endfor %}
+            </ul>
+          </div>{% endfor %}
+          <div class="span3">
+            <h3>{{ site.footer.categories[page.locale] }}</h3>
+            <ul>{% for cat in site.categories %}
+              <li>
+                <a href="/{{ cat[0] }}/">{{ cat[0] }}</a>
+              </li>{% endfor %}
+            </ul>
+          </div>
+				</div>
+			</div>
+		</footer>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=439910186052859";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+		
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-19997759-4']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+	</body>
+</html>
