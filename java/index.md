@@ -1,6 +1,6 @@
 ---
-lang: en
-layout: category
+locale: en
+layout: category-post-list
 cat: java
 ---
 
