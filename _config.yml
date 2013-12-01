@@ -2,6 +2,7 @@
 url:      http://engineering.clever-cloud.com
 pygments: true
 paginate: 3
+markdown: kramdown
 
 # locales by prefered order, default goes first
 locale: [en]
@@ -70,7 +71,7 @@ author:
     job:
       en:     Office & Production Manager
     twitter:  kdecherf
-  durillon: &author_durillon
+  judu: &author_judu
     name:     Julien Durillon
     job:
       en:     Sytem Administrator and Developer
