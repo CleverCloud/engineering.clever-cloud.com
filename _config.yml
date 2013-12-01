@@ -70,7 +70,7 @@ author:
     job:
       en:     Office & Production Manager
     twitter:  kdecherf
-  durillon: &author_durillon
+  judu: &author_judu
     name:     Julien Durillon
     job:
       en:     Sytem Administrator and Developer
