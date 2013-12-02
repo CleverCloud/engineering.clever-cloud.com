@@ -11,12 +11,12 @@ This post will cover the new Clever Cloud Artifactory instance we deploy
 two weeks ago, and how to set up SBT to make every client project use the proxy
 server, without the need of specific configuration for the client.
 
-## Requirements
+### Requirements
 
 To follow this post, we assume that you already know and use
 [SBT](http://scala-sbt.org/). Nothing else is needed.
 
-## What is / Why use Artifactory?
+### What is / Why use Artifactory?
 
 [Artifactory Open Source](http://www.jfrog.com/home/v_artifactory_opensource_overview)
  is an open
@@ -51,7 +51,7 @@ After considering various possibilities, the Artifactory solution was the best o
 
 So, eventually, [we started the server](http://maven.mirror.clvrcld.net:8080/artifactory/webapp/home.html?0)
 
-## The bad part: client configuration.
+### The bad part: client configuration.
 
 Setting up the server was as easy as dropping a war in an application
 server. Actually, it just consists of dropping a war in an application
@@ -59,7 +59,7 @@ server, and following the (crystal clear, well written) documentation.
 
 Setting up the client wasn't that easy.
 
-### Maven client configuration
+#### Maven client configuration
 
 Maven was not a huge problem to set up. Some clicks in the artifactory
 public (anonymous) interface give you the following (you can happily
@@ -119,9 +119,9 @@ user defined repositories. If an artifact is on a private repository, it
 **will not** be downloaded through nor cached by our artifactory
 instance.
 
-### SBT client configuration
+#### SBT client configuration
 
-#### Add ivy typesafe and SBT repositories to Artifactory
+##### Add ivy typesafe and SBT repositories to Artifactory
 
 For the SBT instance, there is two things to do: add the ivy typesafe
 repositories in the Artifactory and configure SBT to use our
@@ -136,7 +136,7 @@ First, in Artifactory, we add the following remote repositories:
 Then we put the first two in a new virtual repository (for example
 *ivy-remote-repo*), then we add the third one to the *remote-repos* virtual repository.
 
-#### Configure SBT
+##### Configure SBT
 
 Here we come to the core of this post: setting up SBT to use our proxy
 server while keeping the users out of the trouble of setting a specific
@@ -215,6 +215,6 @@ External::: public: http://repo1.maven.org/maven2/
 We can see that bootResolvers contains the resolvers defined in the `~/.sbt/repositories` file, and externalResolvers contains the default + project defined repositories. As long as SBT will use the repositories in the given order, our proxy repository will be used before the external ones. (Because of the `boot ++ ext` order.)
 
 
-## Sources
+### Sources
 
 * [http://blog.dlecan.com/configurer-scala-sbt-repository-artifactory/](http://blog.dlecan.com/configurer-scala-sbt-repository-artifactory/) (in french) for the artifactory ivy configuration,
