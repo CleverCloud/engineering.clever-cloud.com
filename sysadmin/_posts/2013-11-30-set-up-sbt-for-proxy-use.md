@@ -30,7 +30,7 @@ As the Clever Cloud scalers are stateless, they don't keep the
 dependencies of a project between two deployments. Therefore, every
 dependency has to be downloaded for each deployment. Maven having the
 (almost justified) reputation to download half the internet on a first
-run, a deployment can take ages because of the deployments.
+run, a deployment can take ages because of the dependencies.
 
 The first step we did was to initialize a local Maven (or Ivy, or SBT) cache
 with common plugins and dependencies. But maintaining an up-to-date image
