@@ -2,16 +2,21 @@
 locale: en
 layout: post
 
-title: "Set up your sbt for personal proxy use"
+title: "Set up your SBT for personal proxy use"
 author: "judu"
 level: 1
 ---
 
-This post will cover the Clever Cloud Artifactory instance for faster
-deployments, and how to set up SBT to make everyone use the proxy
-server.
+This post will cover the new Clever Cloud Artifactory instance we deploy
+two weeks ago, and how to set up SBT to make every client project use the proxy
+server, without the need of specific configuration for the client.
 
-### What is / Why use Artifactory?
+## Requirements
+
+To follow this post, we assume that you already know and use
+[SBT](http://scala-sbt.org/). Nothing else is needed.
+
+## What is / Why use Artifactory?
 
 [Artifactory Open Source](http://www.jfrog.com/home/v_artifactory_opensource_overview)
  is an open
@@ -46,15 +51,15 @@ After considering various possibilities, the Artifactory solution was the best o
 
 So, eventually, [we started the server](http://maven.mirror.clvrcld.net:8080/artifactory/webapp/home.html?0)
 
-### The bad part: client configuration.
+## The bad part: client configuration.
 
 Setting up the server was as easy as dropping a war in an application
-server. Actually, it just consist of dropping a war in an application
+server. Actually, it just consists of dropping a war in an application
 server, and following the (crystal clear, well written) documentation.
 
 Setting up the client wasn't that easy.
 
-#### Maven client configuration
+### Maven client configuration
 
 Maven was not a huge problem to set up. Some clicks in the artifactory
 public (anonymous) interface give you the following (you can happily
@@ -114,15 +119,15 @@ user defined repositories. If an artifact is on a private repository, it
 **will not** be downloaded through nor cached by our artifactory
 instance.
 
-#### Sbt client configuration
+### SBT client configuration
 
-##### Add ivy typesafe and sbt repositories to Artifactory
+#### Add ivy typesafe and SBT repositories to Artifactory
 
-For the sbt instance, there was two things to do: add the ivy typesafe
-repositories in the Artifactory, and configure sbt to use our
+For the SBT instance, there is two things to do: add the ivy typesafe
+repositories in the Artifactory and configure SBT to use our
 Artifactory instance.
 
-First, in Artifactory, we added the following remote repositories:
+First, in Artifactory, we add the following remote repositories:
 
 * sbt-plugin-releases => http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/
 * typesafe-ivy-releases => http://repo.typesafe.com/typesafe/ivy-releases/
@@ -131,12 +136,16 @@ First, in Artifactory, we added the following remote repositories:
 Then we put the first two in a new virtual repository (for example
 *ivy-remote-repo*), then we add the third one to the *remote-repos* virtual repository.
 
-##### Configure SBT
+#### Configure SBT
 
-In the SBT documentation, there is a
+Here we come to the core of this post: setting up SBT to use our proxy
+server while keeping the users out of the trouble of setting a specific
+Clever Cloud configuring for their applications.
+
+Rummaging through the documentation, we come across a
 ["Proxy" section](http://www.scala-sbt.org/release/docs/Detailed-Topics/Proxy-Repositories.html).
 
-Let's define a ~/.sbt/repositories file:
+Let's follow it and define a ~/.sbt/repositories file:
 
 {% highlight yaml %}
 [repositories]
@@ -159,7 +168,7 @@ repositories.
 So let's be clever, and read about
 [global settings](http://www.scala-sbt.org/release/docs/Detailed-Topics/Global-Settings.html).
 We can put a `global.sbt` file in ~/.sbt/ (and ~/.sbt/0.13/ because of the new 0.13+ global files versioning) that will
-be used each time we start sbt.
+be used each time we start SBT.
 
 We keep our `repositories` file, and in the `global.sbt` file we put the following:
 
@@ -170,9 +179,9 @@ externalResolvers <<= (bootResolvers, externalResolvers) map (
 )
 {% endhighlight %}
 
-Here, the `bootResolvers` value represents the content of the `repositories` file, and the `externalResolvers` value reflects the default sbt repositories plus project-defined repositories.
+Here, the `bootResolvers` value represents the content of the `repositories` file, and the `externalResolvers` value reflects the default SBT repositories plus project-defined repositories.
 
-For curiosity sake, I added some println in global.sbt:
+For curiosity sake, I added some *println*s in global.sbt:
 
 {% highlight scala %}
 externalResolvers <<= (bootResolvers, externalResolvers) map (
@@ -184,7 +193,7 @@ externalResolvers <<= (bootResolvers, externalResolvers) map (
 )
 {% endhighlight %}
 
-Then I runned `sbt compile` in a play project with additional *resolvers*:
+Then I ran `sbt compile` in a play project with additional *resolvers*:
 
 {% highlight text %}
 ...
@@ -206,6 +215,6 @@ External::: public: http://repo1.maven.org/maven2/
 We can see that bootResolvers contains the resolvers defined in the `~/.sbt/repositories` file, and externalResolvers contains the default + project defined repositories. As long as SBT will use the repositories in the given order, our proxy repository will be used before the external ones. (Because of the `boot ++ ext` order.)
 
 
-### Sources
+## Sources
 
-* [http://blog.dlecan.com/configurer-scala-sbt-repository-artifactory/](http://blog.dlecan.com/configurer-scala-sbt-repository-artifactory/) (in french) for the artifactory ivy configuration
+* [http://blog.dlecan.com/configurer-scala-sbt-repository-artifactory/](http://blog.dlecan.com/configurer-scala-sbt-repository-artifactory/) (in french) for the artifactory ivy configuration,
