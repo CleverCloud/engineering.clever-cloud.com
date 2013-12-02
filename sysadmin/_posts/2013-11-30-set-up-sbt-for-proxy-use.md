@@ -3,7 +3,7 @@ locale: en
 layout: post
 
 title: "Set up your SBT for personal proxy use"
-author: "judu"
+author: "durillon"
 level: 1
 ---
 
