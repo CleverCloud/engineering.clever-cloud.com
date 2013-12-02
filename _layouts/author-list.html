@@ -13,7 +13,7 @@ layout: base
 	<ul>{% for author in site.author.list %}
 		<li class="author">
       <div class="avatar">
-        <img src="http://api.twitter.com/1/users/profile_image/{{ author.twitter }}" alt="{{ site.post.pic[page.locale] }} {{ author.name }}"/>
+        <img src="/img/avatars/{{ author.twitter }}.jpg" alt="{{ site.post.pic[page.locale] }} {{ author.twitter }}" height="50px"/>
       </div>
       <h4>
         {{ author.name }}

@@ -18,7 +18,7 @@ layout: base
 	<footer class="row post-info">{% if page.author %}
     <div class="span5 author">
       <div class="avatar">
-	      <img src="http://api.twitter.com/1/users/profile_image/{{ site.author[page.author].twitter }}" alt="{{ site.post.pic[page.locale] }} {{ site.author[page.author].name }}"/>
+	      <img src="/img/avatars/{{ site.author[page.author].twitter }}.jpg" alt="{{ site.post.pic[page.locale] }} {{ site.author[page.author].twitter }}" height="50px"/>
       </div>
       <h4>
         {{ site.author[page.author].name }}
