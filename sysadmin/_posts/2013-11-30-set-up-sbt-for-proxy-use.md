@@ -11,7 +11,7 @@ This post will cover the Clever Cloud Artifactory instance for faster
 deployments, and how to set up SBT to make everyone use the proxy
 server.
 
-## What is / Why use Artifactory?
+### What is / Why use Artifactory?
 
 [Artifactory Open Source](http://www.jfrog.com/home/v_artifactory_opensource_overview)
  is an open
@@ -28,10 +28,10 @@ dependency has to be downloaded for each deployment. Maven having the
 run, a deployment can take ages because of the deployments.
 
 The first step we did was to initialize a local Maven (or Ivy, or SBT) cache
-with common plugins and dependencies. But maintain an up-to-date image
+with common plugins and dependencies. But maintaining an up-to-date image
 represents a lot of work. So, to speed up the download of dependencies,
 we needed a Maven (resp. Ivy) repository next to the scalers; that means
-in the same DC.
+in the same data center.
 
 After considering various possibilities, the Artifactory solution was the best one:
 
@@ -46,7 +46,7 @@ After considering various possibilities, the Artifactory solution was the best o
 
 So, eventually, [we started the server](http://maven.mirror.clvrcld.net:8080/artifactory/webapp/home.html?0)
 
-## The bad part: client configuration.
+### The bad part: client configuration.
 
 Setting up the server was as easy as dropping a war in an application
 server. Actually, it just consist of dropping a war in an application
@@ -54,7 +54,7 @@ server, and following the (crystal clear, well written) documentation.
 
 Setting up the client wasn't that easy.
 
-### Maven client configuration
+#### Maven client configuration
 
 Maven was not a huge problem to set up. Some clicks in the artifactory
 public (anonymous) interface give you the following (you can happily
@@ -114,9 +114,9 @@ user defined repositories. If an artifact is on a private repository, it
 **will not** be downloaded through nor cached by our artifactory
 instance.
 
-### Sbt client configuration
+#### Sbt client configuration
 
-#### Add ivy typesafe and sbt repositories to Artifactory
+##### Add ivy typesafe and sbt repositories to Artifactory
 
 For the sbt instance, there was two things to do: add the ivy typesafe
 repositories in the Artifactory, and configure sbt to use our
@@ -131,7 +131,7 @@ First, in Artifactory, we added the following remote repositories:
 Then we put the first two in a new virtual repository (for example
 *ivy-remote-repo*), then we add the third one to the *remote-repos* virtual repository.
 
-#### Configure SBT
+##### Configure SBT
 
 In the SBT documentation, there is a
 ["Proxy" section](http://www.scala-sbt.org/release/docs/Detailed-Topics/Proxy-Repositories.html).
@@ -206,6 +206,6 @@ External::: public: http://repo1.maven.org/maven2/
 We can see that bootResolvers contains the resolvers defined in the `~/.sbt/repositories` file, and externalResolvers contains the default + project defined repositories. As long as SBT will use the repositories in the given order, our proxy repository will be used before the external ones. (Because of the `boot ++ ext` order.)
 
 
-## Sources
+### Sources
 
 * [http://blog.dlecan.com/configurer-scala-sbt-repository-artifactory/](http://blog.dlecan.com/configurer-scala-sbt-repository-artifactory/) (in french) for the artifactory ivy configuration
