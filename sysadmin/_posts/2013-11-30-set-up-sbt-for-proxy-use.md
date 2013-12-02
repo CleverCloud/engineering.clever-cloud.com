@@ -7,7 +7,8 @@ author: "durillon"
 level: 1
 ---
 
-This post will cover the new Clever Cloud Artifactory instance we deploy
+This post will cover the new Clever Cloud Artifactory instance we
+deployed
 two weeks ago, and how to set up SBT to make every client project use the proxy
 server, without the need of specific configuration for the client.
 
