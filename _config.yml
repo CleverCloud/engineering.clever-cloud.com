@@ -71,7 +71,7 @@ author:
     job:
       en:     Office & Production Manager
     twitter:  kdecherf
-  judu: &author_judu
+  judu: &author_durillon
     name:     Julien Durillon
     job:
       en:     Sytem Administrator and Developer
@@ -96,12 +96,7 @@ author:
     job:
       en:     Interaction Designer
     twitter:  crmfrsh
-  thommy: &author_foucault
-    name:     Régis Foucault
-    job:
-      en:     Platform Evangelist
-    twitter:  R_Foucault
-  list: [*author_adam, *author_belouin, *author_kdecherf, *author_durillon, *author_keruspe, *author_louerat, *author_nivolle, *author_tayrac, *author_foucault]
+  list: [*author_adam, *author_belouin, *author_kdecherf, *author_durillon, *author_keruspe, *author_louerat, *author_nivolle, *author_tayrac]
 
 # sidebar
 sidebar:
