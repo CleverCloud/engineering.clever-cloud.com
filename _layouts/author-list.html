@@ -3,25 +3,25 @@ layout: base
 ---
 
 <div id="single">
-	<div class="page-header">
-		<h2>
+  <div class="page-header">
+    <h2>
       <a href="{{ site.link.base.url }}">{{ site.link.base[page.locale] }}</a> &raquo;
-			{{ page.title }}
-		</h2>
-	</div>
-	<div class="content">{{ content }}</div>
-	<ul>{% for author in site.author.list %}
-		<li class="author">
+      {{ page.title }}
+    </h2>
+  </div>
+  <div class="content">{{ content }}</div>
+  <ul>{% for author in site.author.list %}
+    <li class="author">
       <div class="avatar">
-        <img src="/img/avatars/{{ author.twitter }}.jpg" alt="{{ site.post.pic[page.locale] }} {{ author.twitter }}" height="50px"/>
+        <img src="{{ author.avatar }}" alt="{{ site.post.pic[page.locale] }} {{ author.name }}"/>
       </div>
       <h4>
         {{ author.name }}
-	      <small>{{ author.job[page.locale] }}</small>
+        <small>{{ author.job[page.locale] }}</small>
       </h4>
       <a href="https://twitter.com/{{ author.twitter }}" class="twitter-follow-button" data-show-count="false" data-lang="{{ page.locale }}">
         @{{ site.i.authors[r].twitter }}
       </a>
-		</li>{% endfor %}
-	</ul>
+    </li>{% endfor %}
+  </ul>
 </div>

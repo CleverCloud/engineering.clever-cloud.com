@@ -3,13 +3,15 @@ locale: en
 layout: post
 
 title: "Kickstart your scala API client by turning JSON into case classes."
-author: "adam"
+author: adam
 level: 2
 ---
 
 ##Why code generation ?
 
 When interacting with 3rd party json-based APIs from scala, modelling the API's responses with case classes can come in handy. If the JSON exhibits some properties (homogenous lists, for instance), it's easy to create a case class with the same structure. With some deserialization magic it's easier to deal with the API's responses.
+
+<!--more-->
 
 So basically is borring to write the case class, and the tool is doing it for you. The target was not to be perfect, but just to allow you quickly generate some case class.
 

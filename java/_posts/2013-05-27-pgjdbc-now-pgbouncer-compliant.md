@@ -3,11 +3,13 @@ locale:  en
 layout: post
 
 title: "The PostgreSQL JDBC Driver is now PgBouncer compliant"
-author: "kdecherf"
+author: decherf
 level: 1
 ---
 
 Three years ago a discussion was launched on the Pgbouncer mailing-list \[1\] about the JDBC Driver which does not disable prepared statements when using `?prepareThreshold=0` in the connection string.
+
+<!--more-->
 
 At Clever Cloud, we provide PostgreSQL databases behind PgBouncer to handle pools of connections. And to optimize these pools, we use the *transaction pooling mode*. This mode will prevent clients from using prepared statements as the session is only used for one transaction.
 
