@@ -1,0 +1,45 @@
+---
+layout: base
+locale: en
+---
+
+<article class="main post">
+	<div class="">
+    <div class="tag-list__header">
+  		<h2>
+        <a href="{{ site.link.base.url }}">{{ site.link.base[page.locale] }}</a> &raquo;
+  			{{ page.tag }}
+  		</h2>
+    </div>
+	</div>
+	<div class="content">
+		{{ content }}
+	</div>
+</article>
+{% for post in page.posts %}
+<article class="main post">
+	<div class="page-header">
+		<h2>
+			<a href="{{ post.url }}">{{ post.title }}</a>
+		</h2>
+    <span class="date">
+      {{ site.post.posted[page.locale] }}
+    </span>
+    <span class="date value" title="{{ post.date | date: site.post.date[page.locale] }}">
+      {{ post.date | date: site.post.date[page.locale] }}
+    </span>
+	</div>
+  <div class="content">
+    {% if post.banner %}
+    <div>
+       <img class="cc-banner" src="{{ post.banner }}">
+    </div>
+    {% endif %}
+    {{ post.excerpt }}
+    <div class="footer-list">
+      <a href="{{ post.url }}" class="cc-btn">{{ site.post.more[page.locale] }}</a>
+    </div> 
+  </div>
+  <hr class="cc-post_divider">
+
+</article>{% endfor %}
