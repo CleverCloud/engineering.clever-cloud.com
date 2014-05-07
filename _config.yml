@@ -1,14 +1,15 @@
 # jekyll generation settings
 url:      http://engineering.clever-cloud.com
-pygments: true
-paginate: 3
-markdown: kramdown
+highlighter:        pygments
+paginate:        5
+tag_page_layout: tag-post-list
+tag_page_dir:    tag
+markdown:        kramdown
+excerpt_separator: <!--more-->
+gems: ['jekyll-less']
 
 # locales by prefered order, default goes first
 locale: [en]
-
-# message templates
-tpl:
 
 # reccurent links. internal links without the first slash, to allow localized
 # urls like: /{locale/}page/subpage.html
@@ -16,6 +17,9 @@ link:
   authors: &link_authors
     en:  Authors
     url: /authors.html
+  archive: &link_archive
+    en:  Archive
+    url: /archive.html
   base: &link_base
     en:  Clever Cloud Engineering Blog
     url: /
@@ -27,30 +31,32 @@ link:
   contact: &link_contact
     en:  Contact
     url: http://www.clever-cloud.com/en/contact.html
+  engineering: &link_engineering
+    en:  Engineering blog
+    url: http://engineering.clever-cloud.com
   facebook: &link_facebook
     en:  Facebook
     url: http://facebook.com/clevercloudsas
+    logo: /img/social/facebook.png
   github: &link_github
-    en:  Find us on Github
+    en:  Github
     url: https://github.com/CleverCloud
-  press: &link_press
-    en:  Press blog
-    url: http://blog.clever-cloud.com
   rss: &link_rss
     en:  RSS
-    url: feed.xml
+    url: /feed.xml
+    logo: /img/social/rss.png
   twitter: &link_twitter
     en:  Twitter
     url: http://twitter.com/clever_cloud
+    logo: /img/social/twitter.png
 
 # navs (lists of links)
 nav:
   portal:  [*link_com]
-  social:  [*link_twitter, *link_facebook, *link_rss]
-  sidebar: [*link_authors, *link_github]
+  social:  [link_twitter, link_facebook, *link_archive, *link_rss ]
   footer:
   - en:   Clever Cloud
-    list: [*link_com, *link_authors, *link_press, *link_contact]
+    list: [*link_com, *link_authors, *link_engineering, *link_contact, *link_archive]
   - en:   Follow us
     list: [*link_twitter, *link_facebook, *link_rss, *link_github]
 
@@ -59,58 +65,78 @@ author:
   adam: &author_adam
     name:     Quentin Adam
     job:
-      en:     Clever Cloud C.E.O
+      en:     CEO
     twitter:  waxzce
+    avatar:  http://www.clever-cloud.com/assets/img/team/quentin.jpg
   belouin: &author_belouin
     name:     Rodolphe Belouin
     job:
       en:     Javascript & Scala Enthousiast
     twitter:  rbelouin
-  kdecherf: &author_kdecherf
+    avatar:  http://www.clever-cloud.com/assets/img/team/rodolphe.jpg
+  decherf: &author_decherf
     name:     Kévin Decherf
     job:
       en:     Office & Production Manager
     twitter:  kdecherf
-  judu: &author_durillon
+    avatar:  http://www.clever-cloud.com/assets/img/team/kevin.jpg
+  durillon: &author_durillon
     name:     Julien Durillon
     job:
       en:     Sytem Administrator and Developer
     twitter:  juuduu
+    avatar:  http://www.clever-cloud.com/assets/img/team/judu.jpg
   keruspe: &author_keruspe
     name:     Marc-Antoine Perennou
     job:
       en:     Java and GNU/Linux Hacker
     twitter:  keruspe
+    avatar:  http://www.clever-cloud.com/assets/img/team/marc-antoine.jpg
   louerat: &author_louerat
     name:     Bastien Louerat
     job:
       en:     Scala, Akka & Netty Software Developer
     twitter:  blouerat
+    avatar:  http://www.clever-cloud.com/assets/img/team/bastien.jpg
   nivolle: &author_nivolle
     name:     Clément Nivolle
     job:
-      en:     Project Manager
+      en:     CMO
     twitter:  cnivolle
+    avatar:  http://www.clever-cloud.com/assets/img/team/clement.jpg
   tayrac: &author_tayrac
     name:     Arthur Tayrac
     job:
       en:     Interaction Designer
     twitter:  crmfrsh
-  list: [*author_adam, *author_belouin, *author_kdecherf, *author_durillon, *author_keruspe, *author_louerat, *author_nivolle, *author_tayrac]
+    avatar:  http://www.clever-cloud.com/assets/img/team/arthur.jpg
+  crette: &author_crette
+    name:     Adrien Cretté
+    job:
+      en:     Communication Wizard
+    twitter:  dadzwhybe‎
+    avatar:  http://www.clever-cloud.com/assets/img/team/adrien.jpg
+  list: [*author_adam, *author_belouin, *author_decherf, *author_durillon, *author_keruspe, *author_nivolle, *author_tayrac,*author_crette]
 
 # sidebar
 sidebar:
   latest:
-    en: Latest posts
+    en: Recent Posts
+  categories:
+    en: Categories
+  tags:
+    en: Tags
 
 # full-page post
 post:
   pub:
     en: Published
   date:
-    en: "%m/%d/%Y"
+    en: "%Y-%m-%d"
   posted:
-    en: Posted on
+    en: Posted
+  postedby:
+    en: Posted by
   pic:
     en: Profile picture of
   more:

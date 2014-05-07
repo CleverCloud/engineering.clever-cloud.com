@@ -1,5 +1,2 @@
-To build the blog, use jekyll.
-
-The Gemfile will help you install the dependencies.
-
-Just run `bundle install` and the needed gems will be installed.
+sudo gem install jekyll-tagging 
+sudo gem install jekyll-less
