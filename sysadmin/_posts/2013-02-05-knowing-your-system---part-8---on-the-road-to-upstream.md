@@ -3,15 +3,18 @@ locale: en
 layout: post
 
 title: Knowing your system - Part 8 - On the road to upstream
-author: "keruspe"
+author: keruspe
 level: 5
 ---
 
 ## How did I start contributing?
 
 When I started to really dig into my system to fully understand how it works, breaking everything to know of to fix it,
-I decided to do even worse and started using [scm](http://en.wikipedia.org/wiki/Source_Control_Management) packages. Scm
-packages download the source code directly for the upstream development repository using [git](http://git-scm.com/),
+I decided to do even worse and started using [scm](http://en.wikipedia.org/wiki/Source_Control_Management) packages. 
+
+<!--more-->
+
+Scm packages download the source code directly for the upstream development repository using [git](http://git-scm.com/),
 [subversion](http://subversion.tigris.org/), [mercurial](http://mercurial.selenic.com/) or whatever other
 [vcs](http://en.wikipedia.org/wiki/Revision_control).
 

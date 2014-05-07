@@ -3,7 +3,7 @@ locale: en
 layout: post
 
 title: "Knowing your system - Part 6 - Source-based distributions: Discovering Exherbo"
-author: "keruspe"
+author: keruspe
 level: 5
 ---
 
@@ -11,8 +11,10 @@ level: 5
 
 As I said [in part 3](http://engineering.clever-cloud.com/sysadmin/2012/12/10/knowing-your-system---part-3---source-based-distributions-the-gentoo-example.html)
 of the "knowing your system" saga, I really started to dig
-into my system when I used [Gentoo](http://www.gentoo.org/). I quickly spotted the limits of portage, its default
-package manager [and switched to paludis](http://engineering.clever-cloud.com/sysadmin/2012/12/13/knowing-your-system---part-4---falling-in-love-with-paludis.html).
+into my system when I used [Gentoo](http://www.gentoo.org/). I quickly spotted the limits of portage, its default package manager [and switched to paludis](http://engineering.clever-cloud.com/sysadmin/2012/12/13/knowing-your-system---part-4---falling-in-love-with-paludis.html).
+
+<!--more-->
+
 It really is easy to mess up your python installation, especially when you're not a python developer and you don't care
 about it. Of course there are tools to help you, such as `python-updater`, but it won't be of great help if you're not
 in a basic "breakage because of python update" case. Because of portage being written in python, you end up with an

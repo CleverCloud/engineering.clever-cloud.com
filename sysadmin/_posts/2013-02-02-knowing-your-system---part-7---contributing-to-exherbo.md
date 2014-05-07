@@ -3,7 +3,7 @@ locale: en
 layout: post
 
 title: "Knowing your system - Part 7 - Contributing to Exherbo"
-author: "keruspe"
+author: keruspe
 level: 5
 ---
 
@@ -12,9 +12,10 @@ level: 5
 Basically everything regarding [exherbo](http://www.exherbo.org/) is discussed and managed via the `#exherbo` IRC
 channel on `irc.freenode.org`.
 
+<!--more-->
+
 Before contributing, you should first read the topic of the channel, [the zebrapig patchbot documentation](http://www.exherbo.org/docs/patchbot.html),
-[the exheres for smarties tutorial](http://exherbo.org/docs/exheres-for-smarties.html) (You do not have to read the
-whole thing, but always keep it around), and you can also keep [the contributing guide](http://www.exherbo.org/docs/contributing.html)
+[the exheres for smarties tutorial](http://exherbo.org/docs/exheres-for-smarties.html) (You do not have to read the whole thing, but always keep it around), and you can also keep [the contributing guide](http://www.exherbo.org/docs/contributing.html)
 around.
 
 ## Using zebrapig

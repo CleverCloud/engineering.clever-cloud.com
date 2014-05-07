@@ -3,13 +3,15 @@ locale: en
 layout: post
 
 title: "Knowing your system - Part 5 - Source-based distributions: the binary way"
-author: "keruspe"
+author: keruspe
 level: 5
 ---
 
 [We last saw](http://engineering.clever-cloud.com/sysadmin/2012/12/13/knowing-your-system---part-4---falling-in-love-with-paludis.html)
 the [paludis](http://paludis.exherbo.org/) tool. Now, we'll take a look at how we can handle a source-based distribution
 using paludis for large pools of servers.
+
+<!--more-->
 
 ## Source-based distributions for huge server pools
 
