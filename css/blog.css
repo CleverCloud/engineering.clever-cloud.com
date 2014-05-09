@@ -40,7 +40,7 @@ code {
 }
 
 body{
-	background:  #293441;
+	background:  #333e4a;
 	color:       #DEDEDE;
 	font-family: Verdana, Geneva, sans-serif;
 }
@@ -95,7 +95,7 @@ a.cc-try-catch:hover{
 		padding-bottom: 35px;
 	}
 	.main{
-		background-color: #293441;
+		background-color:#333e4a;
 		margin-bottom: 20px;
 	}
 	.post,#single{
@@ -219,7 +219,7 @@ a.cc-try-catch:hover{
 				display: inline-block;
         height: 8px;
         margin: 9px 10px 9px 9px;
-        width: 186px;
+        width: 300px;
       }
 			}
 			.fb-like-box span{
@@ -236,7 +236,6 @@ a.cc-try-catch:hover{
 				margin-top:5px;
 			}
 				.author h4{
-					color:#676767;
 					font-size:20px;
 					font-family: Verdana, Geneva, sans-serif;
 					line-height:30px;
@@ -359,7 +358,7 @@ a.cc-try-catch:hover{
   }
 	a:hover,a:focus,.post h2 a:hover,.post h2 a:focus,#single h2 a:hover,
 	#single h2 a:focus,#categories a:hover,#categories a:focus {
-		color:#676767;
+		color: rgba(255,255,255,.5);
 		text-decoration:none;
 	}
   #tag-cloud .tags{

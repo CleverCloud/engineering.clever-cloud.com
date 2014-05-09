@@ -26,19 +26,13 @@ layout: base
   	{{ content }}
   </div>
   <footer class="post-info"> 
-  	<div class="tags">
-
-  		<div class="tags-list">
-        {% for tag in page.tags %}
-          <a href="/tag/{{ tag }}.html" rel="tag">{{ tag }}</a>
-        {% endfor %}
-      </div>
-  	</div>
     <div class="social">
       <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ site.url | escape }}{{ page.url | escape }}" data-text="{{ page.title }} via @Clever_Cloud">
         Tweet
       </a>
       <div class="fb-like" data-href="{{ site.url | escape }}{{ page.url | escape }}" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false"></div>
+      <div class="g-plus" data-action="share" data-annotation="bubble" ></div>
+
 		</div>
 	</footer>
 	<div id="disqus_thread"></div>

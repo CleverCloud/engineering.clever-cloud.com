@@ -114,9 +114,15 @@ author:
     name:     Adrien Cretté
     job:
       en:     Communication Wizard
-    twitter:  dadzwhybe‎
+    twitter:  dadzwhybe
     avatar:  http://www.clever-cloud.com/assets/img/team/adrien.jpg
-  list: [*author_adam, *author_belouin, *author_decherf, *author_durillon, *author_keruspe, *author_nivolle, *author_tayrac,*author_crette]
+  clementd: &author_clementd
+    name:     Clément Delafargue
+    job:
+      en:     λ Architect
+    twitter:  clementd
+    avatar:  http://www.penazen-consulting.com/images/clement_delafargue.jpg
+  list: [*author_adam, *author_belouin, *author_decherf, *author_durillon, *author_keruspe, *author_nivolle, *author_tayrac,*author_crette, *author_clementd]
 
 # sidebar
 sidebar:
